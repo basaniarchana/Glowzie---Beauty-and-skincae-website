@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>GLOWZIE</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+
+<body style="background-image: url('backgroundimage.avif'); background-size: cover; background-repeat: no-repeat;">
+
+
+<!-- Login / Signup Modal -->
+
+<div id="authModal" class="modal" style="display:block;">
+
+  <div class="modal-content">
+
+
+    <span class="close" onclick="closeModal()">
+      &times;
+    </span>
+
+
+
+    <!-- Login -->
+
+    <div id="loginForm" class="auth-form">
+
+
+      <h3>Login</h3>
+
+
+
+      <input 
+        type="email" 
+        placeholder="Email"
+        id="loginEmail"
+        required
+        pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+        title="Please enter a valid Gmail address"
+      >
+
+
+
+
+      <input 
+        type="password" 
+        placeholder="Password"
+        id="loginPassword"
+        required
+      >
+
+
+
+
+      <button onclick="handleLogin()">
+        Login
+      </button>
+
+
+
+
+      <p>
+        Don't have an account?
+
+        <a href="#" onclick="switchTo('signup')">
+
+          Sign up here
+
+        </a>
+
+      </p>
+
+
+
+    </div>
+
+
+</div>
+
+
+    <!-- Signup -->
+
+    <div id="signupForm" class="auth-form" style="display:none;">
+
+
+      <h3>Sign Up</h3>
+
+
+      <input type="text" placeholder="Full Name" id="signupName">
+
+
+      <input type="email" placeholder="Email" id="signupEmail">
+
+
+      <input type="password" placeholder="Password" id="signupPassword">
+
+
+      <button onclick="handleSignup()">
+        Sign Up
+      </button>
+
+
+      <p>
+        Already have an account?
+        <a href="#" onclick="switchTo('login')">
+          Login here
+        </a>
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+<!-- Main Website -->
+
+<div id="mainContent" style="display:none;">
+
+
+
+<!-- Header -->
+
+<header>
+
+
+<h1>GLOWZIE 💖</h1>
+
+
+<nav>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#know-your-skin">Know Your Skin</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+
+</ul>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+<!-- Hero Section -->
+
+
+<section id="hero">
+
+
+<h2>Radiate Confidence</h2>
+
+
+<p>Your beauty journey starts here</p>
+
+
+<button onclick="scrollToSection('services')">
+
+Explore Services
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- About -->
+
+
+<section id="about">
+
+
+<h2>About Us</h2>
+
+
+<p>
+
+Glowzie is your trusted partner in self-care and transformation.
+We believe everyone deserves to feel beautiful every day.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Services -->
+
+
+<section id="services">
+
+
+<h2>Our Services</h2>
+
+
+
+<div class="service-list">
+
+
+
+<div class="service-card">
+
+
+<img src="makup.avif" alt="Makeup">
+
+
+<h3>Makeup</h3>
+
+
+<p>
+Professional makeup for events and photoshoots.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="service-card">
+
+
+<img src="skincare.avif" alt="Skincare">
+
+
+<h3>Skincare</h3>
+
+
+<p>
+Rejuvenating facials and skincare consultations.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="service-card">
+
+
+<img src="hairstyling.jpeg" alt="Hair Styling">
+
+
+<h3>Hair Styling</h3>
+
+
+<p>
+Trendy hairstyles, cuts and color services.
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Gallery -->
+
+
+<section id="gallery">
+
+
+<h2>Gallery</h2>
+
+
+
+<div class="gallery-grid">
+
+
+<img src="gallery.jpg">
+
+
+<img src="gallery2.jpg">
+
+
+<img src="galler3.jpg">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Know Your Skin -->
+
+<section id="know-your-skin">
+
+
+<h2>Know Your Skin ✨</h2>
+
+
+<iframe 
+
+src="index.html"
+
+width="100%"
+
+height="600px"
+
+style="border:none; border-radius:20px;">
+
+</iframe>
+
+
+</section>
+
+
+
+
+<!-- Contact -->
+
+
+<section id="contact">
+
+
+<h2>Contact Us</h2>
+
+
+
+<form id="contactForm">
+
+
+<input type="text" placeholder="Your Name" required>
+
+
+<input type="email" placeholder="Your Email" required>
+
+
+<textarea placeholder="Your Message"></textarea>
+
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+
+</form>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+<footer>
+
+
+<p>
+
+© 2025 Glowzie. All rights reserved.
+
+</p>
+
+
+</footer>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>
